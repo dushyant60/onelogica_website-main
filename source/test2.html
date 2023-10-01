@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable Table</title>
+
+    <style>
+        /* CSS styles here */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Add a class for resizable columns */
+        .resizable {
+            position: relative;
+        }
+
+        .resizable::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -5px; /* Adjust the handle width */
+            bottom: 0;
+            width: 10px; /* Adjust the handle width */
+            cursor: col-resize;
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table id="resizable-table">
+        <thead>
+            <tr>
+                <th class="resizable">Column 1</th>
+                <th class="resizable">Column 2</th>
+                <th class="resizable">Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+
+    <script>
+        // JavaScript code here
+        const resizableTable = document.getElementById("resizable-table");
+        let columnResizing = false;
+        let startX, startWidth, targetHeader;
+
+        resizableTable.addEventListener("mousedown", (e) => {
+            if (e.target.className.includes("resizable")) {
+                columnResizing = true;
+                startX = e.pageX;
+                targetHeader = e.target;
+                startWidth = targetHeader.offsetWidth;
+            }
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!columnResizing) return;
+            const newWidth = startWidth + (e.pageX - startX);
+            targetHeader.style.width = newWidth + "px";
+        });
+
+        document.addEventListener("mouseup", () => {
+            columnResizing = false;
+        });
+    </script>
+</body>
+</html>

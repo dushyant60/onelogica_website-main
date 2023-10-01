@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Onelogica | BigData, Analytics ,ML & AI">
+
+    <!-- ========== Page Title ========== -->
+    <title>Onelogica | BigData, Analytics ,ML & AI</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets\img\fav1.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/bootsnav.css" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5/html5shiv.min.js"></script>
+      <script src="assets/js/html5/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- ========== Favicon Icon ========== -->
+    <style>
+        body {
+            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+
+        /* Toggle Styles */
+
+        #viewport {
+            padding-left: 250px;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        #content {
+            width: 100%;
+            position: relative;
+            margin-right: 0;
+        }
+
+        /* Sidebar Styles */
+
+        #sidebar {
+            z-index: 1000;
+            position: fixed;
+            left: 250px;
+            width: 250px;
+            height: 100%;
+            margin-left: -250px;
+            overflow-y: auto;
+            background: #37474F;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        #sidebar header {
+            background-color: #263238;
+            font-size: 20px;
+            line-height: 52px;
+            text-align: center;
+        }
+
+        #sidebar header a {
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        #sidebar header a:hover {
+            color: #fff;
+        }
+
+        #sidebar .nav {}
+
+        #sidebar .nav a {
+            background: none;
+            border-bottom: 1px solid #455A64;
+            color: #CFD8DC;
+            font-size: 14px;
+            padding: 16px 24px;
+        }
+
+        #sidebar .nav a:hover {
+            background: none;
+            color: #ECEFF1;
+        }
+
+        #sidebar .nav a i {
+            margin-right: 16px;
+        }
+
+        .mainContainer {
+            background: #133A53 url(https://ctwebdesignshop.com/wp-content/uploads/2019/01/homepage-hero.jpg);
+            position: relative;
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: left;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .mainContainer .overlay {
+            position: absolute;
+            /* top: 0;
+            left: 0;
+            right: 0; */
+            /* background: rgb(19,58,83); */
+            /* background: linear-gradient(220deg, rgba(19,58,83,0.85) 0%, rgba(208,97,40,0.85) 100%); */
+        }
+
+        .mainContainer .overlay .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            width: 70vw;
+            margin: auto;
+            transform-origin: left;
+            animation: reveal 1s ease-in-out forwards;
+        }
+
+        h1 {
+            font-size: 90px;
+            line-height: 0.9;
+            margin-bottom: 0px;
+            color: white;
+        }
+
+        p {
+            font-size: 24px;
+            color: white;
+        }
+
+
+        .mainContainer .overlay .content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ff6700;
+            z-index: 3;
+            animation: reveal .5s reverse forwards;
+            animation-delay: .5s;
+
+        }
+
+        .mainContainer .overlay .content:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #133A53;
+            z-index: 2;
+            animation: reveal 0.7s reverse forwards;
+            animation-delay: .7s;
+            transform-origin: left;
+        }
+
+
+
+        @keyframes reveal {
+            0% {
+                transform: scaleX(0);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+    <div id="viewport">
+        <nav class="navbar navbar-default navbar-fixed dark no-background bootsnav" style="width:100%;height:3.3rem;background-color: #263238;border-radius: 0px;">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li>
+                        <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+                        </a>
+                    </li> -->
+                    <!-- <li><a href="#">Test User</a></li> -->
+                </ul>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <header>
+                <!-- <a href="#">My App</a> -->
+                <a href="index.html">
+                    <img src="assets\img\logo1.png" class="logo img-fluid" alt="Logo" >
+                </a>
+            </header>
+            <ul class="nav">
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-view-dashboard"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-link"></i> Shortcuts
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-widgets"></i> Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-calendar"></i> Events
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-info-outline"></i> About
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-settings"></i> Services
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-comment-more"></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="imageContainer"  style="height:39vh;margin-bottom: 12px;">
+            <div class="container-fluid">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container" style="height: 41vh">
+                                <img src="assets/img/automative.jpg" style="height: -webkit-fill-available; width: -webkit-fill-available;-we-webkit-mask-size:cover" />
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container" style="height: 41vh">
+                                <img src="assets/img/energy.jpg" style="height: -webkit-fill-available; width: -webkit-fill-available;-we-webkit-mask-size:cover" />
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container" style="height: 41vh">
+                                <img src="assets/img/manufacturing.jpg" style="height: -webkit-fill-available; width: -webkit-fill-available;-we-webkit-mask-size:cover" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+                            class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span
+                            class="glyphicon glyphicon-chevron-right"></span></a> -->
+                </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div id="content">
+            <div class="container-fluid mainContainer">
+                <div class="overlay">
+                    <div class="content">
+                        <h1>Simple Sidebar</h1>
+                        <p>
+                            Make sure to keep all page content within the
+                            <code>#content</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- Preloader Start -->
+</div>
+    <!-- End Footer-->
+
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/equal-height.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/modernizr.custom.13711.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/slider.js"></script>
+
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+</body>
+
+</html>

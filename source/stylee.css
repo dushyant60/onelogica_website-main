@@ -1,0 +1,31 @@
+/* styles.css */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Add a class for resizable columns */
+.resizable {
+    position: relative;
+}
+
+.resizable::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -5px; /* Adjust the handle width */
+    bottom: 0;
+    width: 10px; /* Adjust the handle width */
+    cursor: col-resize;
+    background: #f2f2f2;
+}

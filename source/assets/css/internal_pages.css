@@ -1,0 +1,57 @@
+.main_container {
+    height: 800px;
+    width: 100%;
+    overflow: auto;
+
+}
+
+.small_container {
+    height: 50%;
+    width: 50%;
+    float: right;
+    overflow: auto;
+
+    margin: 15px;
+}
+
+/* h2 {
+    text-align: center;
+    background-color: brown;
+
+    margin: 10px;
+
+} */
+
+.image_container {
+    height: 400px;
+    width: 500px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+
+}
+
+
+.container1 {
+    height: 50%;
+    width: 50%;
+    float: left;
+
+    margin: 15px;
+
+
+}
+
+.image1 {
+    margin: 15px;
+    float: right;
+    height: 400px;
+    width: 500px;
+    margin-left: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+
+}
+
+/* 

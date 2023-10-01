@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="file">
+    <button onclick="uploadFile()">Upload File</button>
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <script>
+
+        gapi.load('client', function () {
+            gapi.client.init({
+                apiKey: 'YOUR_API_KEY',
+                clientId: 'YOUR_CLIENT_ID',
+                discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+                scope: 'https://www.googleapis.com/auth/drive'
+            }).then(function () {
+                // Authorize and make API requests
+                gapi.auth2.getAuthInstance().signIn().then(function () {
+                    var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
+                    uploadFile(accessToken);
+                });
+            });
+        });
+
+
+
+        function uploadFile(accessToken) {
+            var fileInput = document.getElementById('file');
+            var file = fileInput.files[0];
+            var metadata = {
+                name: file.name
+            };
+
+            var form = new FormData();
+            form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+            form.append('file', file);
+
+            fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken
+                },
+                body: form
+            }).then(function (response) {
+                console.log('File uploaded:', response);
+            }).catch(function (error) {
+                console.error('Error uploading file:', error);
+            });
+        }
+
+    </script>
+</body>
+
+</html>

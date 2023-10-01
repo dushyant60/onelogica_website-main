@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <form id="myForm" method="post" enctype="multipart/form-data" name="submit-to-google-sheet">
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="file" name="file" id="myFile">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const submitForm = document.forms['submit-to-google-sheet'];
+    submitForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const formData = new FormData(submitForm);
+      const fileInput = document.getElementById('myFile');
+      const file = fileInput.files[0];
+
+      const fr = new FileReader();
+      fr.addEventListener('loadend', () => {
+        const fileData = {
+          base64: fr.result.split("base64,")[1],
+          type: file.type,
+          name: file.name
+        };
+        formData.set('file', JSON.stringify(fileData));
+
+        fetch("https://script.google.com/macros/s/AKfycbyhZTHYGVVhWDS0zBcGOu3ZssCxyIc1_BDtHk5Cc7Qs-bJOptPkk6fTF9_xl_vX5HA/exec", { method: 'POST', body: formData })
+          .then(response => {
+            console.log('Success!', response);
+            submitForm.reset();
+          })
+          .catch(error => console.error('Error!', error.message));
+      });
+      fr.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
