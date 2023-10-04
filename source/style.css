@@ -81,7 +81,7 @@ html {
 
 body {
   font-family: "Nunito";
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 30px;
   overflow-x: hidden;
@@ -200,7 +200,7 @@ h4 {
 }
 
 h2 {
-  font-size: 22px
+  font-size: 1.8rem
 }
 
 a,
@@ -890,7 +890,7 @@ input {
 
 .btn-simple {
   display: inline-block;
-  border: 1px solid #e7e7e7;
+  /* border: 1px solid #e7e7e7; */
   padding: 10px 40px;
   border-radius: 30px;
   color: #437eeb;
@@ -974,13 +974,17 @@ header {
 }
 
 header nav.navbar.border.bootsnav.navbar-fixed.no-background {
+  background-color: rgba(18, 72, 107, 0.5); /* Change the color and opacity as needed */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Adjust the height to your desired value */
 }
 
 header nav.navbar.border.bootsnav.navbar-fixed.no-background ul li a {
+  color: #ffffff; /* Change the text color to white or your preferred color */
   position: relative;
   z-index: 1;
   margin-left: 3px;
+  padding: 5px 5px; /* Adjust the padding as needed */
 }
 
 header nav.navbar.border.bootsnav.navbar-fixed.no-background .attr-nav ul li a {
@@ -1013,7 +1017,7 @@ header nav.navbar.border.bootsnav.navbar-fixed.no-background .attr-nav ul li a:h
 }
 
 .attr-nav .social.right li {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .attr-nav .social li a {
@@ -1076,7 +1080,7 @@ nav.bootsnav.navbar-default.info-topbar.sticked ul li a {
 
 nav.navbar.bootsnav.sticked .attr-nav.social li {
   display: inline-block;
-  padding: 20px 0 !important;
+  padding: 10px 0 !important;
 }
 
 .site-heading h4 {
@@ -1144,14 +1148,14 @@ nav.navbar.bootsnav.sticked .attr-nav.social li {
 }
 
 .heading-left {
-  margin-bottom: 60px;
+  margin-bottom: px;
 }
 
 .heading-left h2 {
   margin: 0;
   font-weight: 700;
   margin-top: -8px;
-  font-size: 36px;
+  font-size: px;
 }
 
 .heading-left p {
@@ -1643,55 +1647,56 @@ nav.navbar.bootsnav.sticked .attr-nav.social li {
      # video 
 =================================================================== */
 /* CSS Styling for the Video Section */
-#video-section {
-  width: 100%;
-  height: auto;
-  /* object-fit: cover; */
-  max-width: 100%;
-  overflow: hidden;
-  /* margin-top: 100px; */
-  /* border: 2px solid red; */
-}
-
-@media screen and (max-width: 768px) {
   #video-section {
     width: 100%;
-    height: auto;
-    margin-top: 73px;
-    /* Adjust the margin for smaller screens */
+    height: 100%;
+    object-fit: cover; 
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px; 
+    /* border: 2px solid red; */
   }
-}
 
-video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+  @media screen and (max-width: 768px) {
+    #video-section {
+      width: 100%;
+      height: auto;
+      margin-top: 73px;
+      /* Adjust the margin for smaller screens */
+    }
+  }
 
-@media screen and (max-width: 768px) {
   video {
     width: 100%;
     height: auto;
-    /* Adjust the margin for smaller screens */
+    display: block;
   }
-}
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  /* 16:9 aspect ratio */
-  overflow: hidden;
-}
+  @media screen and (max-width: 768px) {
+    video {
+      width: 100%;
+      height: auto;
+      /* Adjust the margin for smaller screens */
+    }
+  }
 
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    overflow: hidden;
+  }
+
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 
 
 /* ============================================================== 
@@ -2136,6 +2141,11 @@ body,
   transform: rotate(65deg);
 }
 
+.thumb img {
+  width: 300px; /* Adjust to your desired width */
+  height: auto; /* Maintain the aspect ratio */
+}
+
 .banner-area .double-items .thumb img {
   max-width: 120%;
 }
@@ -2145,7 +2155,7 @@ body,
 }
 
 .banner-area.thumb-solid .double-items .thumb img {
-  max-width: 100% !important;
+  max-width: 200% !important;
 }
 
 .banner-area.thumb-pos .double-items .thumb {
@@ -2827,8 +2837,8 @@ body,
 .center-tabs .nav-tabs li a {
   display: block;
   border: none;
-  border-radius: 5px;
-  padding: 10px 25px;
+  border-radius: 25px;
+  padding: 9px 37px;
   position: relative;
   z-index: 1;
   color: #666666;
@@ -2841,8 +2851,8 @@ body,
 
 .center-tabs .nav-tabs li a.active {
   background: linear-gradient(90deg,
-  #041534 0%,
-      rgba(67, 126, 235, 1) 100%);
+  rgb(5 27 67) 0%,
+      rgb(30 163 140) 100%);
   color: #ffffff;
 }
 
@@ -2875,7 +2885,7 @@ body,
 .center-tabs .tab-content {
   padding: 50px;
   background: #ffffff;
-  border-top: 3px solid #437eeb;
+  /* border-top: 3px solid #437eeb; */
   box-shadow: 0 5px 30px 0 rgba(214, 215, 216, 0.57);
 }
 
@@ -3028,6 +3038,16 @@ body,
 .choseus-items .info ul li i::before {
   position: relative;
   top: 8px;
+}
+
+.joinus {
+  background-image: url("../source/assets/img/onur-binay-_yC2htzMYnI-unsplash.jpg");
+  width: 100%;
+  background-size: cover; /* Adjust to your preference */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-color: transparent; /* Optional, sets the background color of the div */
+  color: white; /* Optional, sets text color to make it more visible */
+  /* Add other styles as needed */
 }
 
 /* ============================================================== 
@@ -3382,7 +3402,7 @@ body,
   box-shadow: 0 5px 30px 0 rgba(214, 215, 216, 0.57);
   padding: 50px 37px;
   border-radius: 10px;
-  background: linear-gradient(to bottom, #041534 0%, #093ac1 100%);
+  background: linear-gradient(to bottom, #132341 0%, #0996c1 100%);
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -3849,9 +3869,12 @@ body,
 =================================================================== */
 
 /* Updated CSS for responsiveness */
+
+
 .page-heading {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .product-container {
@@ -3876,6 +3899,7 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #435B70;
 }
 
 
@@ -3921,16 +3945,18 @@ body,
 .read-more {
   display: block;
   margin: 10px auto 0;
-  background-color: #007bff;
+  background-color: #394d62;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
   padding: 8px 15px;
   cursor: pointer;
 }
 
+/* Read More Hover Color Change  */
 .read-more:hover {
-  background-color: #0056b3;
+  color: #ffffff;
+  background-color: #071935;
 }
 
 /* Media queries for responsiveness */
@@ -4444,7 +4470,7 @@ body,
 }
 
 .services-single-area .services-sidebar .sidebar-item li a:hover {
-  color: #437eeb;
+  color: #394c6d;
 }
 
 .services-single-area .services-sidebar .sidebar-item li:last-child {
@@ -4566,6 +4592,8 @@ body,
 .choseus-area .info p {
   margin: 0;
 }
+
+
 
 /* ============================================================== 
      # How it works
@@ -5011,6 +5039,17 @@ body,
   height: 100%;
   width: 100%;
   opacity: 0.7;
+  background-size: cover; /* Add this property */
+  background-position: center center; /* Add this property */
+  z-index: -1;
+}
+.fun-factor-area .fixed-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .fun-factor-area.bg-gray .fixed-bg {
@@ -5092,7 +5131,25 @@ body,
   pointer-events: none;
   /* Disable further clicks until animation completes */
   transition: transform 0.6s;
-}
+
+  /* new video */
+  .fixed-bg {
+    position: relative; /* Set the position to relative */
+    width: 100%; /* Adjust the width as needed */
+    height: 100vh; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;  
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust the object-fit property as needed */
+  }
+  
+} */
 
 /* ============================================================== 
      # Clients 
@@ -7327,8 +7384,8 @@ footer .f-items .f-item .social li {
 
 footer .f-items .f-item .social li a {
   display: inline-block;
-  height: 37px;
-  width: 37px;
+  height: 0px;
+  width: 50px;
   line-height: 40px;
   text-align: center;
   color: #ffffff;
@@ -7419,8 +7476,18 @@ footer .footer-bottom p a {
 
 body.dark-layout,
 body.dark-layout p {
-  color: #cccccc;
+  color: #ffffff;
+  padding-bottom: 30px;
 }
+
+/* About Us Heading Color */
+.about-heading {
+  font-weight: 700;
+  text-decoration: underline;
+  text-align: left;
+  color: #0C356A  !important; /* Replace 'YourColorHere' with the desired color value */
+}
+
 
 body.dark-layout h1,
 body.dark-layout h2,
@@ -7440,7 +7507,7 @@ body.dark-layout .bg-gray
 
 /* Background color */
   {
-  background: #4086ab;
+  background: #435B70;
 }
 
 body.dark-layout .bg-light-gradient {
@@ -7455,7 +7522,7 @@ body.dark-layout nav.navbar.navbar-default.bootsnav {
 }
 
 body.dark-layout nav.bg-gray.navbar.navbar-default.bootsnav {
-  background: #000b28 !important;
+  background: #071935  !important;
   /* Navbar color */
   box-shadow: 0 8px 25px 0 rgb(0 0 0 / 4%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -7559,12 +7626,13 @@ body.dark-layout .our-features-area .feature-items .item {
   /* height:52vh; */
 }
 
+/* Changes in Carousel */
 body.dark-layout .btn-simple {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   color: #ffffff;
   background: linear-gradient(90deg,
-      rgba(67, 126, 235, 1) 0%,
-      rgba(30, 85, 189, 1) 100%);
+      rgba(249, 249, 249) 0%, 
+      rgba(0, 24, 68) 100%);
 }
 
 body.dark-layout .btn-simple:hover {
@@ -7674,17 +7742,17 @@ body.dark-layout .feature-box .item .bottom>i {
 
 /* End Features */
 
-body.dark-layout .center-tabs .nav-tabs li a {
+body.dark-layout .center-tabs .tabs li a {
   color: #ffffff;
 }
 
 body.dark-layout .center-tabs .tab-content {
-  background: #4086ab;
+  background: none;
   box-shadow: inherit;
 }
 
 body.dark-layout .bg-gray .center-tabs .tab-content {
-  background: #0d152e;
+  background: #419197;
 }
 
 body.dark-layout .about-area .about-items .center-tabs .info h3 {
@@ -8083,11 +8151,18 @@ a:hover {
   margin-top: calc(var(--bs-gutter-y) * -1);
 }
 
+/* Latest Technology section */
+
+.latest-para{
+  display: block;
+}
+
 .row>* {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-top: var(--bs-gutter-y);
   max-width: 100%;
+  padding-bottom: 20px;
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   width: 100%;
@@ -8391,3 +8466,76 @@ a:hover {
 		font-size: 6vw;
 	}
 } */
+
+/* Join US */
+
+.about-us-headline-div {
+  width: 100%;
+  gap: 2rem;
+  padding-bottom: 50px;
+  /* padding: 1rem; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-para {
+    width: 100%;
+    margin: auto;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: capitalize;
+}
+
+.contact-us {
+  width: max-content;
+  text-transform: uppercase;
+}
+
+/* Contact-US */
+
+/* Base styles for the contact-us button */
+.contact-us {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  background-color: rgba(52, 152, 219, 0.4); /* Adjust the alpha (opacity) value */
+  color: rgba(255, 255, 255, 0.9); /* Adjust the alpha (opacity) value */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover styles */
+.contact-us:hover {
+  background-color: #071935; /* Change to desired color on hover */
+  color: #fff; /* Change text color on hover */
+  transform: scale(1.05);
+}
+
+/* Active styles (when clicked) */
+.contact-us:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+/* Social Hadles */
+/* Style for the social media logos */
+.social li img {
+  width: 80px; /* Adjust the width for the zoom effect */
+  height: 50px; /* Adjust the height for the zoom effect */
+  border-radius: 50%; /* Makes the image round */
+  transition: transform 0.3s, opacity 0.3s;
+} 
+
+/* Hover effect: Zoom in slightly on hover */
+.social li:hover img {
+  transform: scale(1.1); /* Adjust the scale factor for zooming */
+  opacity: 0.9; /* Adjust the opacity for a subtle hover effect */
+}
